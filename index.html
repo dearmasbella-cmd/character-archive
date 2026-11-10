@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191a">
+  <title>The Character Archive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div><p class="eyebrow">A WORLD OF YOUR MAKING</p><h1>The Character Archive</h1><p>Every universe. Every story. Every character.</p></div><span class="seal" aria-hidden="true">✦</span></header>
+  <main class="layout">
+    <section class="panel" aria-labelledby="editor-heading">
+      <div class="section-heading"><h2 id="editor-heading">Create a character</h2><span class="tag">VERSION 1</span></div>
+      <form id="character-form">
+        <label for="universe">Universe</label>
+        <select id="universe" name="universe"><option value="Original Universe">Original Universe</option><option value="Wizarding World">Wizarding World</option><option value="Percy Jackson">Percy Jackson</option><option value="Marvel">Marvel</option><option value="The Vampire Diaries">The Vampire Diaries</option><option value="Custom Fandom">Custom Fandom</option></select>
+        <div id="custom-universe-wrap" hidden><label for="custom-universe">Fandom / universe name</label><input id="custom-universe" maxlength="80" placeholder="Your fandom or universe"></div>
+        <div class="two-col"><div><label for="name">Character name *</label><input id="name" required maxlength="100" placeholder="e.g. Aurora Vale"></div><div><label for="age">Age</label><input id="age" maxlength="30" placeholder="e.g. 22 or immortal"></div></div>
+        <div class="two-col"><div><label for="pronouns">Pronouns</label><input id="pronouns" maxlength="60" placeholder="e.g. she/her"></div><div><label for="species">Species</label><input id="species" maxlength="80" placeholder="e.g. human, vampire"></div></div>
+        <div id="fandom-fields"></div>
+        <label for="personality">Personality</label><textarea id="personality" rows="3" maxlength="1500" placeholder="What makes them who they are?"></textarea>
+        <label for="appearance">Appearance</label><textarea id="appearance" rows="3" maxlength="1500" placeholder="Describe their look..."></textarea>
+        <label for="backstory">Backstory</label><textarea id="backstory" rows="5" maxlength="6000" placeholder="Every character has a story..."></textarea>
+        <label for="portrait">Portrait (optional)</label><input id="portrait" type="file" accept="image/png,image/jpeg,image/webp"><p class="hint">PNG, JPEG, or WebP. Maximum 1 MB. Stored only in this browser.</p>
+        <div class="actions"><button type="submit" class="primary">Save character</button><button type="button" id="new-character" class="secondary">New character</button></div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <aside class="sidebar">
+      <section class="panel preview-panel" aria-labelledby="preview-heading"><h2 id="preview-heading">Character preview</h2><div id="portrait-preview" class="portrait-placeholder">✧</div><p id="preview-universe" class="eyebrow">ORIGINAL UNIVERSE</p><h3 id="preview-name">Your character</h3><p id="preview-meta">Their story begins here.</p><p id="preview-extra" class="preview-extra"></p><p id="preview-personality" class="preview-text"></p><button id="export-character" class="secondary" type="button">Download profile (JSON)</button></section>
+      <section class="panel" aria-labelledby="library-heading"><div class="section-heading"><h2 id="library-heading">Your library</h2><span id="count" class="tag">0</span></div><p class="hint">Saved on this device, in this browser. Clearing browser data can erase them.</p><div id="library" class="library-list"></div></section>
+    </aside>
+  </main>
+  <footer>Made for the stories only you can tell. · Fan-made, unofficial project.</footer>
+</body>
+</html>
